@@ -6,7 +6,7 @@
 /*   By: altheven <altheven@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 11:40:12 by altheven          #+#    #+#             */
-/*   Updated: 2025/06/27 13:30:30 by altheven         ###   ########.fr       */
+/*   Updated: 2025/06/30 13:04:17 by altheven         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ HumanB :: ~HumanB (void)
 
 void	HumanB :: attack(void)
 {
-	std :: cout << this->_name << "attacks with their ";
+	std :: cout << this->_name << " attacks with their ";
 	if (this->_club)
 		std :: cout << this->_club->getType() << std :: endl;
 	else

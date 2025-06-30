@@ -6,7 +6,7 @@
 /*   By: altheven <altheven@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 11:40:27 by altheven          #+#    #+#             */
-/*   Updated: 2025/06/27 13:31:33 by altheven         ###   ########.fr       */
+/*   Updated: 2025/06/30 13:04:20 by altheven         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ HumanA :: ~HumanA (void)
 
 void	HumanA :: attack(void)
 {
-	std :: cout << this->_name << "attacks with their " << this->_club.getType() << std :: endl;;
+	std :: cout << this->_name << " attacks with their " << this->_club.getType() << std :: endl;;
 }

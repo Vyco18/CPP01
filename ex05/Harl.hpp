@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: altheven <altheven@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/27 09:31:04 by altheven          #+#    #+#             */
-/*   Updated: 2025/06/30 12:49:14 by altheven         ###   ########.fr       */
+/*   Created: 2025/06/30 03:25:18 by altheven          #+#    #+#             */
+/*   Updated: 2025/06/30 09:56:24 by altheven         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef HARL_HPP
+# define HARL_HPP
 
-#include "Zombie.hpp"
-void	randomChump( std :: string name);
-Zombie	*newZombie(std :: string name);
+# include <iostream>
 
-int	main(void)
+class Harl
 {
-	Zombie	*z;
-	std :: string name;
-	try
-	{
-		name = "Billy";
-	}
-	catch (...)
-	{
-		std :: cerr << "Error With Alloc" << std :: endl ;
-		return 1;
-	}
-	z = newZombie(name);
-	if (!z)
-		return 1;
-	z->announce();
-	randomChump("Bobby");
-	delete z;
-	return 0;
-}
+	public :
+	void complain(std :: string level);
+	Harl(void);
+	~Harl(void);
+
+	private :
+	void	(Harl :: *f_ptr[4])(void);
+	void	debug(void);
+	void	info(void);
+	void	warning(void);
+	void	error(void);
+};
+
+#endif

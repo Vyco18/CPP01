@@ -5,34 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: altheven <altheven@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/27 09:31:04 by altheven          #+#    #+#             */
-/*   Updated: 2025/06/30 12:49:14 by altheven         ###   ########.fr       */
+/*   Created: 2025/06/30 03:07:03 by altheven          #+#    #+#             */
+/*   Updated: 2025/06/30 11:14:23 by altheven         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Harl.hpp"
 
-#include "Zombie.hpp"
-void	randomChump( std :: string name);
-Zombie	*newZombie(std :: string name);
-
-int	main(void)
+int	main(int ac, char **av)
 {
-	Zombie	*z;
-	std :: string name;
-	try
-	{
-		name = "Billy";
-	}
-	catch (...)
-	{
-		std :: cerr << "Error With Alloc" << std :: endl ;
-		return 1;
-	}
-	z = newZombie(name);
-	if (!z)
-		return 1;
-	z->announce();
-	randomChump("Bobby");
-	delete z;
-	return 0;
+	Harl Harl;
+	
+	if (ac == 2)
+		Harl.complain(av[1]);
+	else
+		std :: cout << "[ Probably complaining about insignificant problems ]" << std :: endl;
 }
