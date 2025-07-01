@@ -2,11 +2,11 @@ CC = c++
 
 FLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRC = ./Account.cpp ./tests.cpp
+SRC = ./Harl.cpp ./main.cpp
 
-HEAD = ./Account.hpp
+HEAD = ./Harl.hpp
 
-NAME = BankAccount
+NAME = harlFilter
 
 $(NAME) :
 			$(CC) $(FLAGS) $(SRC) -o $(NAME)

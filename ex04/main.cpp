@@ -6,7 +6,7 @@
 /*   By: altheven <altheven@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/29 14:10:20 by altheven          #+#    #+#             */
-/*   Updated: 2025/06/30 13:13:46 by altheven         ###   ########.fr       */
+/*   Updated: 2025/07/01 13:11:28 by altheven         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,12 @@ int	main(int ac, char **av)
 		{
 			outName = av[1];
 			outName += ".replace";
-			std :: ofstream outFile((char const *)outName);
+			std :: ofstream outFile(outName.c_str());
+			if (!outFile.is_open())
+			{
+				std :: cerr << "OutFile can't open" << std :: endl;
+				return 1;
+			}
 			std :: string inFile;
 			while(std :: getline(inputfile, inFile))
 			{
@@ -56,7 +61,11 @@ int	main(int ac, char **av)
 				if (!inputfile.eof())
 					outFile << std :: endl;
 			}
+			outFile.close();
 		}
+		else 
+			std :: cerr << "OutFile can't open" << std :: endl;
+		
 	}
 	else
 		std :: cerr << "Check Parameter, need one file, and two string" << std :: endl;
